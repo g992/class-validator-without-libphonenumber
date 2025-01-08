@@ -3996,8 +3996,6 @@ describe('IsTimeZone', () => {
   });
 });
 
-
-
 describe('IsISO31661Alpha2', () => {
   class MyClass {
     @IsISO31661Alpha2()
