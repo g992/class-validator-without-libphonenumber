@@ -1,6 +1,6 @@
 {
   "name": "class-validator-without-libphonenumber",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "Decorator-based property validation for classes.",
   "author": "TypeStack contributors. Edit by G992",
   "license": "MIT",
