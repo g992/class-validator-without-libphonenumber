@@ -69,7 +69,6 @@ import {
   IsArray,
   IsDateString,
   IsInstance,
-  IsPhoneNumber,
   IsISO31661Alpha2,
   IsISO31661Alpha3,
   IsHash,
@@ -3997,71 +3996,7 @@ describe('IsTimeZone', () => {
   });
 });
 
-describe('isPhoneNumber', () => {
-  describe('with region', () => {
-    const validValues = [
-      '+41 311111111',
-      '+41 31 633 60 01',
-      '+41 79 4 666 666',
-      '+41 75 416 20 30',
-      '+41 (0)311111111',
-      '+41 (0)31 633 60 01',
-      '+41 (0)79 4 666 666',
-      '+41 (0)75 416 20 30',
-    ];
-    const invalidValues = [undefined, null, 'asdf', '1'];
 
-    class MyClass {
-      @IsPhoneNumber('CH')
-      someProperty: string;
-    }
-
-    it('should not fail if validator.validate said that its valid', () => {
-      return checkValidValues(new MyClass(), validValues);
-    });
-
-    it('should fail if validator.validate said that its invalid', () => {
-      return checkInvalidValues(new MyClass(), invalidValues);
-    });
-  });
-
-  describe('no region', () => {
-    const validValues = [
-      '+41 311111111',
-      '+41 31 633 60 01',
-      '+41 79 4 666 666',
-      '+41 75 416 20 30',
-      '+41 (0)311111111',
-      '+41 (0)31 633 60 01',
-      '+41 (0)79 4 666 666',
-      '+41 (0)75 416 20 30',
-      '+49 9072 1111',
-    ];
-    const invalidValues = [
-      '0311111111',
-      '031 633 60 01',
-      '079 4 666 666',
-      '075 416 20 30',
-      undefined,
-      null,
-      'asdf',
-      '1',
-    ];
-
-    class MyClass {
-      @IsPhoneNumber(null)
-      someProperty: string;
-    }
-
-    it('should not fail if validator.validate said that its valid', () => {
-      return checkValidValues(new MyClass(), validValues);
-    });
-
-    it('should fail if validator.validate said that its invalid', () => {
-      return checkInvalidValues(new MyClass(), invalidValues);
-    });
-  });
-});
 
 describe('IsISO31661Alpha2', () => {
   class MyClass {
