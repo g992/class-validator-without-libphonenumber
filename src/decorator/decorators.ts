@@ -85,7 +85,6 @@ export * from './string/Length';
 export * from './string/MaxLength';
 export * from './string/MinLength';
 export * from './string/Matches';
-export * from './string/IsPhoneNumber';
 export * from './string/IsMilitaryTime';
 export * from './string/IsHash';
 export * from './string/IsISSN';
